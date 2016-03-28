@@ -1,0 +1,30 @@
+group 'com.play'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    h2Version = '1.4.187'
+    hibernateVersion = '4.3.10.Final'
+    junitVersion = '4.12'
+    nettyVersion = '4.0.30.Final'
+    rabbitmqVersion = '3.5.5'
+}
+
+
+dependencies {
+    compile "io.netty:netty-all:$nettyVersion"
+    compile "com.rabbitmq:amqp-client:$rabbitmqVersion"
+    compile "org.hibernate:hibernate-entitymanager:$hibernateVersion"
+    compile "com.h2database:h2:$h2Version"
+
+    testCompile "junit:junit:$junitVersion"
+}
